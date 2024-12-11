@@ -1,6 +1,17 @@
 // URL da API
 const endpoint = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
 
+const limited1 = [
+ "Fossil Warrior Skull Knight",
+ "Golden Ladybug",
+"Submarineroid",
+"Mystical Space Typhoon",
+"Offerings to the Doomed",
+"Floodgate Trap Hole",
+"Nightmare Wheel",
+"Zoma the Spirit",
+]
+
 // Função para buscar dados
 async function fetchCardInfo() {
   try {
@@ -26,6 +37,11 @@ async function fetchCardInfo() {
   }
 }
 
+async function fetchLimited1(){
+  const resposta = await fetch("")
+}
+
+
 // Função para exibir os dados no HTML
 function displayCards(data) {
   const resultsDiv = document.getElementById("conteudo-cartas");
@@ -45,4 +61,45 @@ function displayCards(data) {
 }
 
 // Chamando a função
-fetchCardInfo();
+//fetchCardInfo();
+
+const fetchCardData = async (cardName) => {
+  const url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${encodeURIComponent(cardName)}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar carta: ${cardName}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
+const fetchLimitedCards = async () => {
+  const filteredCards = [];
+  for (const cardName of limited1) {
+    const cardData = await fetchCardData(cardName);
+    if (cardData && cardData.data && cardData.data.length > 0) {
+      filteredCards.push(cardData.data[0]); // Adiciona a primeira carta encontrada ao array.
+    }
+  }
+
+
+  let limited1div = document.getElementById("limited1") //div
+  console.log(limited1div)
+  for(carta of filteredCards){
+    const imgElemento = document.createElement("img")
+    imgElemento.src = carta.card_images[0].image_url
+    imgElemento.classList.add("img-cards")
+    limited1div.appendChild(imgElemento)
+  }
+
+
+
+  console.log("Cartas limitadas encontradas:", filteredCards);
+};
+
+fetchLimitedCards();
