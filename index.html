@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpeedDuel Format</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+>
+
     <link rel="stylesheet" href="./src/style.css">
+    
 </head>
 <body>
     
-    <header class="cabecalho">
-        <img class="banner-logo" src="./src/images/logo.png" alt="">
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Decks</li>
-            </ul>
-        </nav>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="#">
+                <img src="./src/images/logo.png" alt="logo yugioh speed duel">
+              </a>
+          
+              <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false" data-target="barraNavegacao">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="barraNavegacao" class="navbar-menu ">
+              <div class="navbar-start">
+                <a class="navbar-item" href="#">
+                  Home
+                </a>
+             <div class="navbar-end">  
+                <a class="navbar-item href="#"">
+                  Decks
+                </a>
+                </div>
+             </div>
+           </div>
+          </nav>
     </header>
 
     <main>
@@ -36,7 +62,7 @@
         SpeedDuel Format. <span id="anoAtual"></span> All rights reserved.
     </footer>
     
-
+    <script src="./src/menu.js"></script>    
     <script src="./src/scripts.js"></script>
 </body>
 </html>

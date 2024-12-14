@@ -97,9 +97,6 @@ const fetchLimitedCards = async () => {
     limited1div.appendChild(imgElemento)
   }
 
-
-
-  console.log("Cartas limitadas encontradas:", filteredCards);
 };
 
 fetchLimitedCards();
