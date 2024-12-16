@@ -8,11 +8,10 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
 >
-
-    <link rel="stylesheet" href="./src/style.css">
+ <link rel="stylesheet" href="./src/style.css">
     
 </head>
-<body>
+<body class="todo">
     
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -44,30 +43,41 @@
           </nav>
     </header>
 
-    <main>
+    <main >
+      <div class="conteudo"> 
+
+        <p>Hey everyone, how's it going?! Feel free to grab a coffee. This site brings you the list of banned and limited cards for the Yu-Gi-Oh! Speed Duel format. The list was last updated in July 2024.</p><br><br>
+
         <div>
-            <h2>Forbiden/Limited Cards - Updated 2024 July</h2>
+            <h1>Forbidden/Limited Cards - Updated 2024 July</h1>
+            
         </div>
-        <div id="conteudo-cartas">
-
-        </div>
-
+        
         <div id="limited1"> 
-          <h2>Limited 1</h2>   
+          <h2>Limited 1</h2>  
+          <p>Only 1 of the following cards out of all the cards that are “Limited 1” can be used in your Deck & Side Deck. </p> 
         </div>
 
         <div id="limited2"> 
-          <h2>Limited 2</h2>     
+          <h2>Limited 2</h2>  
+          <p>: Only 2 of the following cards out of all the cards that are “Limited 2” can be used in your Deck & Side Deck.  </p>   
         </div>
 
         <div id="limited3"> 
           <h2>Limited 3</h2>     
         </div>
+      </div> 
 
     </main>
 
-    <footer>
-        SpeedDuel Format. <span id="anoAtual"></span> All rights reserved.
+    <footer class="footer">
+        
+        <div class="content has-text-centered">
+          <p>
+            <strong>SpeedDuelLists</strong> by <a href="#">Law</a>.
+            SpeedDuel Format. <span id="anoAtual"></span> All Yu-Gi-Oh rights reserved to Konami.
+          </p>
+        </div>
     </footer>
     
     <script src="./src/menu.js"></script>    
