@@ -12,34 +12,35 @@ const limited1 = [
 "Zoma the Spirit",
 ]
 
-// Função para buscar dados
-async function fetchCardInfo() {
-  try {
-    // Fazendo a requisição para a API
-    const response = await fetch(endpoint);
-    
-    // Verificando se houve erro na requisição
-    if (!response.ok) {
-      throw new Error(`Erro na requisição: ${response.status}`);
-    }
+const limited2 = [
+  "Cocoon of Ultra Evolution",
+  "Parasite Paranoid",
+"Red-Eyes Baby Dragon",
+"Vortex Trooper",
+"Allure of Darkness",
+"Cup of Ace",
+"Foolish Burial",
+"Machine Angel Ritual",
+"Reinforcement of the Army",
+"Supply Squad",
+"Time Stream",  
+]
 
-    // Convertendo a resposta para JSON
-    const data = await response.json();
+const limited3 = [
+  "Cyber Angel Benten",
+"D.D. Warrior Lady",
+"Gearfried the Iron Knight",
+"Neo-Spacian Grand Mole",
+"Book of Moon",
+"Cosmic Cyclone",
+"Paleozoic Canadia",
+"Sakuretsu Armor",
+"Survival's End",
+"Wall of Disruption",
+"Widespread Ruin",
+]
 
-    // Exibindo dados no console
-    console.log(data);
 
-    // Mostrando os dados no HTML
-    displayCards(data);
-  } catch (error) {
-    // Tratando erros
-    console.error("Erro ao buscar dados da API:", error);
-  }
-}
-
-async function fetchLimited1(){
-  const resposta = await fetch("")
-}
 
 
 // Função para exibir os dados no HTML
@@ -78,24 +79,33 @@ const fetchCardData = async (cardName) => {
   }
 };
 
-const fetchLimitedCards = async () => {
+async function criarHtmlElements(lista, id){
   const filteredCards = [];
-  for (const cardName of limited1) {
+  for (const cardName of lista) {
     const cardData = await fetchCardData(cardName);
     if (cardData && cardData.data && cardData.data.length > 0) {
       filteredCards.push(cardData.data[0]); // Adiciona a primeira carta encontrada ao array.
     }
   }
-
-
-  let limited1div = document.getElementById("limited1") //div
-  console.log(limited1div)
+  
+  let limitedDiv = document.getElementById(id) //div
+  console.log(limitedDiv)
+  
   for(carta of filteredCards){
     const imgElemento = document.createElement("img")
     imgElemento.src = carta.card_images[0].image_url
     imgElemento.classList.add("img-cards")
-    limited1div.appendChild(imgElemento)
+    limitedDiv.appendChild(imgElemento)
   }
+}
+
+const fetchLimitedCards = async () => {
+  
+
+  await criarHtmlElements(limited1, "limited1")
+  await criarHtmlElements(limited2, "limited2")
+  await criarHtmlElements(limited3, "limited3")
+  
 
 };
 
