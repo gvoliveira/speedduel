@@ -1,49 +1,78 @@
-
-body{
-    color: white;
+body {
+  color: white;
 }
 
-main{
-    display: flex;
-    justify-content: center;
+main {
+  display: flex;
+  justify-content: center;
 }
 
-.todo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.main-logo {
+  width: 300px;
+  height: auto;
+  margin-top: 8px;
 }
 
-.banner-logo{
-    width: 200px;
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.cabecalho{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.banner-logo {
+  width: 200px;
 }
 
-.conteudo{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.restricao{
-    font-style: italic;
+.conteudo {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.img-cards{
-    width: 100px;
-    height: auto;
-    transition: linear 0.1s;
+.restricao {
+  font-style: italic;
 }
 
-.img-cards:hover{
-    transform: scale(1.3);
+.img-cards {
+  width: 100px;
+  height: auto;
+  transition: linear 0.1s;
+}
+
+.img-cards:hover {
+  transform: scale(1.3);
+}
+
+.logos-rodape {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logos-rodape img {
+  width: 140px;
+}
+
+.footer {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.navbar-menu {
+  flex-grow: initial;
+  flex-shrink: initial;
 }
