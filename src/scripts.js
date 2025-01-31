@@ -100,12 +100,10 @@ async function criarHtmlElements(lista, id){
 }
 
 const fetchLimitedCards = async () => {
-  
-
+ 
   await criarHtmlElements(limited1, "limited1")
   await criarHtmlElements(limited2, "limited2")
   await criarHtmlElements(limited3, "limited3")
-  
 
 };
 
